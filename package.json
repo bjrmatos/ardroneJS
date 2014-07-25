@@ -1,17 +1,13 @@
 {
-    "name": "NodeCopter-Trail",
-    "description": "NodeCopter Trail",
-    "author": "Rohit Ghatol",
+    "name": "ardroneJS",
+    "description": "ardroneJS",
+    "author": "Diego Alonso Uribe Gamez",
     "version": "0.0.1",
     "dependencies": {
-        "ar-drone": "latest",
-        "express": "latest",
-        "socket.io":"latest",
-        "socket.io-client":"latest",
-        "dronestream":"latest"
-    },
-    "devDependencies": {
-
-    },
-    "engine": "node >= 0.6.6"
+        "ar-drone": "0.3.2",
+        "express": "4.6.1",
+        "socket.io": "0.9.16",
+        "socket.io-client": "1.0.6",
+        "dronestream": "1.1.1"
+    }
 }

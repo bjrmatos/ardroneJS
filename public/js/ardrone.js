@@ -41,21 +41,18 @@ $(function () {
             }
         });
 
-        $("#takeoff").click(function(){
-            console.log("Asking Server to send takeoff command to Ar Drone");
-            socket.emit('event',{name:"takeoff"});
+        var keys = {};
+
+        $(document).keydown(function(event){
+            keys[event.which] = true;
+            socket.emit('event',keys);
+            
+            console.log(keys);
         });
-        $("#spin").click(function(){
-            console.log("Asking Server to send spin command to Ar Drone");
-            socket.emit('event',{name:"spin"});
-        });
-        $("#stop").click(function(){
-            console.log("Asking Server to send stop command to Ar Drone");
-            socket.emit('event',{name:"stop"});
-        });
-        $("#land").click(function(){
-            console.log("Asking Server to send land command to Ar Drone");
-            socket.emit('event',{name:"land"});
+
+        $(document).keyup(function(event){
+            delete keys[event.which];
+            // socket.emit('event',keys);
         });
 
     }
