@@ -2,9 +2,6 @@
 var express = require('express'),
 	app     = express(),
 	server  = require("http").createServer(app);
-
-var controlKeys = {87:0,83:0,68:0,65:0,50:0,52:0,49:0,51:0,56:0};
-
 var actions = {
     48: 'takeoff',
     57: 'land',
@@ -43,7 +40,6 @@ io.sockets.on('connection', function (socket) {
     socket.on('event', function(control){
 
         for(var key in control.keys){
-            // debugger;
             if(key === "48" || key === "57"){
                 client[actions[key]]();
             } else {

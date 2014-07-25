@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Node JS Copter Demo</title>
-    <link type='text/css' rel='stylesheet' href='/css/ardrone.css' />
-    <script src="/js/nodecopter-client.js"></script>
-    <script src="/js/socket.io.min.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/ardrone.js"></script>
-</head>
-<body>
-<h1>ArDroneJs Demo</h1>
-<table>
-    <tr>
-        <td >
-            <button id="takeoff">Take Off</button>
-            <button id="spin">Start Spinning</button>
-            <button id="stop">Stop Y Hover</button>
-            <button id="land">Land</button>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Node JS Copter Demo</title>
+        <link type='text/css' rel='stylesheet' href='/css/ardrone.css' />
+        <script src="/js/nodecopter-client.js"></script>
+        <script src="/js/socket.io.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/ardrone.js"></script>
+    </head>
+    <body>
+        <h1>ArDroneJs Demo</h1>
 
-        </td>
-        <td>
-            <span>Battery</span> - <span id="battery-value"></span>
-            <div class="bar color0">
-                <span id="battery-indicator" style="width:50%"></span>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <h1>Ar Drone Parrot Feed</h1>
+        <span>Battery</span> - <span id="battery-value"></span>
+        <div class="bar color0">
+            <span id="battery-indicator" style="width:50%"></span>
+        </div>
+        <div class='block'>
+            <h1>Ar Drone Parrot</h1>
             <div id="placeholder"></div>
-        </td>
-        <td>
-            <h1>Laptop Camera Feed</h1>
+        </div>
+        <div class='block'>
+            <h1>Computer camara</h1>
             <video id="live" width="640" height="360" autoplay></video>
-        </td>
-    </tr>
-</table>
-
-</body>
+        </div>
+    </body>
 </html>
