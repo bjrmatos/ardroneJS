@@ -1,4 +1,5 @@
 $(function () {
+
     function startArDRoneStream() {
         new NodecopterStream(document.getElementById("placeholder"), {port: 3001});
     }
@@ -26,6 +27,7 @@ $(function () {
         navigator.getUserMedia(constraints, successCallback, errorCallback);
 
     }
+
     function startArDroneController(){
         var socket = io.connect('http://localhost:3002');
         socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
@@ -41,18 +43,21 @@ $(function () {
             }
         });
 
-        var keys = {};
+        var keys   = {};
+        var keyoff = {};
 
         $(document).keydown(function(event){
             keys[event.which] = true;
-            socket.emit('event',keys);
-            
-            console.log(keys);
+            socket.emit('event',{'state':'on','keys':keys});
         });
 
         $(document).keyup(function(event){
             delete keys[event.which];
-            // socket.emit('event',keys);
+            if(event.which!=48 && event.which != 57){
+                keyoff = {};
+                keyoff[event.which] = true;
+                socket.emit('event',{'state':'off','keys':keyoff});
+            }
         });
 
     }
