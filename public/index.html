@@ -4,25 +4,72 @@
         <meta charset="UTF-8"/>
         <title>Node JS Copter Demo</title>
         <link type='text/css' rel='stylesheet' href='/css/ardrone.css' />
+        <link type='text/css' rel='stylesheet' href='/css/base.css' />
         <script src="/js/nodecopter-client.js"></script>
         <script src="/js/socket.io.min.js"></script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ardrone.js"></script>
+        <style>
+            body{
+                background: white;
+            }
+            html,body, .liveat{
+                height: 100%;
+            }
+        </style>
     </head>
     <body>
-        <h1>ArDroneJs Demo</h1>
+        <header id="header" class="header live">
+            <div class="container">
+                <a href="{% url website.views.home %}" title="mejorando.la" class="logo">
+                    <img src="https://mejorando.la/static/images/logos/mejorandola.png?v=1.0" alt="mejorando.la" height="36" width="158" />
+                </a>
+              
+                <div class="display-menu icon-menu"></div>
+            </div>
+            <div class="social-login">
+                <div class="container">
+                    <p>
+                        <span>Entra a la mejor experiencia en educación online </span>
+                        <a href="https://cursos.mejorando.la/login/twitter" class="btn twitter small icon-twitter">Conéctate con Twitter</a>
+                        <a href="https://cursos.mejorando.la/login/facebook" class="btn facebook small icon-facebook">Conéctate con Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </header>
+        <!-- <h1>ArDroneJs Demo</h1>
 
         <span>Battery</span> - <span id="battery-value"></span>
-        <div class="bar color0">
-            <span id="battery-indicator" style="width:50%"></span>
-        </div>
+        
         <div class='block'>
             <h1>Ar Drone Parrot</h1>
-            <div id="placeholder"></div>
-        </div>
-        <div class='block'>
-            <h1>Computer camara</h1>
-            <video id="live" width="640" height="360" autoplay></video>
-        </div>
+        </div> -->
+
+        <section class="liveat relative">
+            <div class="container relative mainlive" style="overflow:hidden">
+                <section class="transmition">
+                    <div class="videowrapp">
+                        <div class="livevideo">
+                            <div id="placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="twitterapp" id="twitter">
+                        <div class="bar color0">
+                            <span id="battery-indicator" style="width:50%"></span>
+                        </div>
+                        <!-- <img src="" alt="avatar">
+                        <div class="text">
+                            <p> </p>
+                        </div> -->
+                    </div>
+                </section>
+                <div class="chat">
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/nodebots" data-widget-id="492823777047093248">Tweets sobre #nodebots</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+                </div>
+            </div>
+        </section>
     </body>
 </html>
