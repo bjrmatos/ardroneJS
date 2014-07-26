@@ -1,8 +1,15 @@
 // server express
-var express = require('express'),
-	app     = express(),
-	server  = require("http").createServer(app);
+var arDrone = require('ar-drone'),
+    express = require('express'),
+    app     = express(),
+	server  = require("http").createServer(app),
+    io      = require('socket.io').listen(3002).set('log level', 1);
+
+// camara-feed
+require("dronestream").listen(3001);
+
 var actions = {
+    11: 'stop',
     48: 'takeoff',
     57: 'land',
     38: 'front',
@@ -18,16 +25,8 @@ var actions = {
 // express public
 app.use(express.static(__dirname + '/public'));
 
-// camara-feed
-require("dronestream").listen(3001);
-
-// server soket.io
-var io = require('socket.io').listen(3002);
-io.set('log level', 1);
-
 // socket.io events
 io.sockets.on('connection', function (socket) {
-    var arDrone = require('ar-drone');
     var client = arDrone.createClient();
 
     // emit battery event
@@ -37,19 +36,24 @@ io.sockets.on('connection', function (socket) {
     },1000);
 
     // events
-    socket.on('event', function(control){
+    socket.on('event', function(keys){
 
-        for(var key in control.keys){
+        function stopDrone(client){
+            client.after(250, function() {
+                this.actions[11]();
+            });
+        }
+
+        for(var key in keys){
             if(key === "48" || key === "57"){
                 client[actions[key]]();
+                if(key === "48"){ client.calibrate(0); }
             } else {
-                if(control.state == 'on'){
-                    client[actions[key]](1);
-                } else if(control.state == 'off'){
-                    client[actions[key]](0);
-                }
+                client[actions[key]](1);
+                stopDrone(client);
             }
         }
+
     });
 });
 
