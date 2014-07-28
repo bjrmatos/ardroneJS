@@ -14,26 +14,40 @@ Muestra la transmision de:
  * Cámara del computador
 
 Drone Control the Keyboard 
- * take off 
- * land 
- * rise 
- * descending 
- * front 
- * back 
- * right 
- * left
+ * takeoff          // Enter
+ * land             // Shift
+ * front            // w
+ * back             // s
+ * left             // a
+ * right            // d
+ * clockwise        // l
+ * counterClockwise // j
+ * up               // i
+ * down             // k
 
 Permite controlar el Drone desde teclado
- * despegar
- * aterrizar
- * elevarse
- * descender
- * inclinarse delante
- * inclinarse atras
- * inclinarse a la derecha
- * inclinarse a la izquierda
+ * despegar       // Enter
+ * aterrizar      // Shift
+ * adelante       // w
+ * atras          // s
+ * izquierda      // a
+ * derecha        // d
+ * giro derecha   // l
+ * giro izquierda // j
+ * elevarse       // i
+ * descender      // k
 
 Updates the battery level constantly
 
 Muestra el estado de la batería constantemente
 
+* takeoff          // Enter
+* land             // Shift
+* front            // w
+* back             // s
+* left             // a
+* right            // d
+* clockwise        // l
+* counterClockwise // j
+* up               // i
+* down             // k

@@ -11,16 +11,16 @@ dStream.listen(3001);
 
 var actions = {
     11: 'stop',
-    48: 'takeoff',
-    57: 'land',
-    38: 'front',
-    40: 'back',
-    37: 'left',
-    39: 'right',
-    50: 'clockwise',
-    52: 'counterClockwise',
-    49: 'up',
-    51: 'down',
+    13: 'takeoff',          // Enter
+    16: 'land',             // Shift
+    87: 'front',            // w
+    83: 'back',             // s
+    65: 'left',             // a
+    68: 'right',            // d
+    76: 'clockwise',        // l
+    74: 'counterClockwise', // j
+    73: 'up',               // i
+    75: 'down',             // k
 };
 
 // express public
