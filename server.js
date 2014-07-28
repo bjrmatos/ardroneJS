@@ -3,10 +3,11 @@ var arDrone = require('ar-drone'),
     express = require('express'),
     app     = express(),
 	server  = require("http").createServer(app),
-    io      = require('socket.io').listen(3002).set('log level', 1);
+    io      = require('socket.io').listen(3002).set('log level', 1),
+    dStream = require("dronestream");
 
 // camara-feed
-require("dronestream").listen(3001);
+dStream.listen(3001);
 
 var actions = {
     11: 'stop',
@@ -40,7 +41,7 @@ io.sockets.on('connection', function (socket) {
 
         function stopDrone(client){
             client.after(250, function() {
-                this.actions[11]();
+                this[actions[11]]();
             });
         }
 

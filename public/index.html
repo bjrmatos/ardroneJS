@@ -4,47 +4,13 @@
         <meta charset="UTF-8"/>
         <title>ardroneJS Demo</title>
         <link type='text/css' rel='stylesheet' href='/css/ardrone.css' />
-        <link type='text/css' rel='stylesheet' href='/css/base.css' />
         <script src="/js/nodecopter-client.js"></script>
         <script src="/js/socket.io.min.js"></script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ardrone.js"></script>
-        <style>
-            body{
-                background: white;
-            }
-            html,body, .liveat{
-                height: 100%;
-            }
-        </style>
     </head>
     <body>
-        <header id="header" class="header live">
-            <div class="container">
-                <a href="https://mejorando.la" title="mejorando.la" class="logo">
-                    <img src="https://mejorando.la/static/images/logos/mejorandola.png?v=1.0" alt="mejorando.la" height="36" width="158" />
-                </a>
-            </div>
-        </header>
-        <section class="liveat relative">
-            <div class="container relative mainlive" style="overflow:hidden">
-                <section class="transmition">
-                    <div class="videowrapp">
-                        <div class="livevideo">
-                            <div id="placeholder"></div>
-                        </div>
-                    </div>
-                    <div class="twitterapp" id="twitter">
-                        <div class="bar color0">
-                            <span id="battery-indicator" style="width:50%"></span>
-                        </div>
-                    </div>
-                </section>
-                <div class="chat">
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/nodebots" data-widget-id="492823777047093248">Tweets sobre #nodebots</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                </div>
-            </div>
-        </section>
+        <div id="placeholder"></div>
+        <span id="battery-indicator" style="width:50%"></span>
     </body>
 </html>
