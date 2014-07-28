@@ -1181,6 +1181,7 @@ var FilterWebGLCanvas = (function () {
         canvas.height = height;
         canvas.style.backgroundColor = "#333333";
         canvas.style.width = "100%";
+        canvas.style.height = "500px";
         div.appendChild(canvas);
 
         webGLCanvas = new YUVWebGLCanvas(canvas, new Size(width, height));
